@@ -1,0 +1,249 @@
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 1rem;
+    margin-top: 1.5rem;
+}
+
+.logo_img {
+    height: 3rem;
+}
+
+.button_nav,
+.button_right,
+.online,
+.header_btn,
+.payments {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.button_nav {
+    justify-content: center;
+    flex-grow: 1;
+    gap: 2rem;
+}
+
+.button_nav a {
+    position: relative;
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.button_nav a::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: -5px;
+    width: 0;
+    height: 5px;
+    background-color: #5182FF;
+    transition: all 0.4s ease;
+    transform: translateX(-50%);
+}
+
+.button_nav a:hover {
+    color: #5182FF;
+}
+
+.button_nav a:hover::after {
+    width: 100%;
+    left: 0;
+    transform: none;
+}
+
+.container div,
+.container a,
+.container span {
+    line-height: 1.5rem;
+}
+
+.logo {
+    font-weight: bold;
+    text-decoration: none;
+    color: inherit;
+}
+
+.button_right {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    color: #ffffff;
+}
+
+.online {
+    border: 1px solid gray;
+    padding: 10px 25px 10px 20px;
+    border-radius: 10px;
+    background-color: #212151;
+}
+
+.elipse {
+    width: 0.7rem;
+    height: 0.7rem;
+    background: #1dff77;
+    border-radius: 100%;
+    animation: onlineElipse 2s infinite;
+    position: relative;
+}
+
+.elipse::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    background: rgba(29, 255, 119, 0.5);
+    border-radius: 50%;
+    transform: translate(-50%, -50%) scale(1);
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: translate(-50%, -50%) scale(1.5);
+        opacity: 0.5;
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(2);
+        opacity: 0;
+    }
+}
+
+.discord_btn,
+.payments_btn {
+    position: relative;
+    height: 50px;
+    padding: 0 20px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    border: none;
+    color: #FFFFFF;
+}
+
+.discord_btn {
+    background-color: #7d4eff;
+}
+
+.payments_btn {
+    background-color: #FF4B3A;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.discord_img,
+.icon {
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+}
+
+.discord_btn .discord_img {
+    margin-right: 0;
+}
+
+.discord_btn:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgb(75, 49, 170);
+}
+
+.payments_btn:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgb(251, 97, 84);
+}
+
+.burger_menu {
+    display: none;
+}
+
+.burger_icon {
+    width: 30px;
+    height: 30px;
+}
+
+/* Мобильное меню */
+.mobile_nav {
+    display: none;
+}
+
+.mobile_nav a {
+    display: block;
+    padding: 1rem;
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    transition: background 0.3s ease;
+}
+
+.mobile_nav a:hover {
+    background-color: #333;
+}
+
+.mobile_nav.active {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 70px;
+    right: 20px;
+    background-color: #212151;
+    padding: 1rem;
+    border-radius: 10px;
+    z-index: 1000;
+}
+
+.mobile_nav.active a {
+    margin: 0.5rem 0;
+}
+
+
+@media (max-width: 1200px) {
+    .container {
+        font-size: 14px;
+    }
+
+}
+@media (max-width: 1050px) {
+    .online {
+        display: none;
+    }
+
+    .button_nav {
+        display: none;
+    }
+
+    .burger_menu {
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+    }
+
+    .button_right {
+        flex-grow: 1;
+        justify-content: flex-end;
+
+    }
+
+    .header_btn {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+    }
+}
+@media (max-width: 550px) {
+    .pay_text {
+        display: none;
+    }
+}
